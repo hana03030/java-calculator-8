@@ -10,7 +10,7 @@ public class Application {
         // 2. 문자열 입력 받기
         String input = Console.readLine();
 
-        // 다음 단계에서 input을 계산기로 넘길 예정
-        System.out.println("입력값: " + input);
+        int result = StringAddCalculator.splitAndSum(input);
+        System.out.println("결과 : " + result);
     }
 }
