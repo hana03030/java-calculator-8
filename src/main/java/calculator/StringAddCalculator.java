@@ -28,8 +28,17 @@ public class StringAddCalculator {
     private static int sum(String[] numbers) {
         int result = 0;
         for (String number : numbers) {
-            result += Integer.parseInt(number);
+            int n = toPositive(number);
+            result += n;
         }
         return result;
+    }
+
+    private static int toPositive(String string) {
+        int number = Integer.parseInt(string.trim()); // 공백 방지
+        if (number < 0) {
+            throw new IllegalArgumentException("음수는 입력할 수 없습니다: " + number);
+        }
+        return number;
     }
 }
