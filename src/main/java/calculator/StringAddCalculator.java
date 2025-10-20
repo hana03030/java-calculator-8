@@ -18,7 +18,7 @@ public class StringAddCalculator {
         if (matcher.find()) {
             String customDelimiter = matcher.group(1); // 예: ;
             String numbers = matcher.group(2); // 예: 1;2;3
-            return sum(numbers.split(customDelimiter));
+            return sum(numbers.split(Pattern.quote(customDelimiter)));
         }
 
         // 2. 기본 구분자 처리
